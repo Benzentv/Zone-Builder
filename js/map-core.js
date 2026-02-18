@@ -35,6 +35,8 @@ function styleForType(type) {
             return { color: '#ff5a5a', fillColor: '#ff5a5a', fillOpacity: 0.22, weight: 2, opacity: 0.8 };
         case 'aktionspunkt':
             return { color: '#ffc800', fillColor: '#ffc800', fillOpacity: 0.22, weight: 2, opacity: 0.8 };
+        case 'safezone':
+            return { color: '#34d399', fillColor: '#34d399', fillOpacity: 0.22, weight: 2, opacity: 0.8 };
         default:
             return { color: '#ffffff', fillColor: '#ffffff', fillOpacity: 0.12, weight: 2, opacity: 0.6 };
     }
@@ -48,6 +50,7 @@ function typeLabel(type) {
         case 'base': return 'Base';
         case 'bauverbot': return 'Bauverbot';
         case 'aktionspunkt': return 'Aktionspunkt';
+        case 'safezone': return 'Safezone';
         default: return type || 'Unbekannt';
     }
 }
@@ -60,6 +63,7 @@ function badgeClassForType(type) {
         case 'base': return 'badge-base';
         case 'bauverbot': return 'badge-bauverbot';
         case 'aktionspunkt': return 'badge-aktionspunkt';
+        case 'safezone': return 'badge-safezone';
         default: return '';
     }
 }
@@ -72,6 +76,7 @@ function dotClassForType(type) {
         case 'base': return 'dot-base';
         case 'bauverbot': return 'dot-bauverbot';
         case 'aktionspunkt': return 'dot-aktionspunkt';
+        case 'safezone': return 'dot-safezone';
         default: return '';
     }
 }

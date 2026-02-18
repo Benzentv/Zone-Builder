@@ -31,7 +31,7 @@
     // Load zones
     try {
         const zones = await loadZones();
-        let countBase = 0, countBan = 0, countAct = 0;
+        let countBase = 0, countBan = 0, countAct = 0, countSafe = 0;
 
         zones.forEach(zone => {
             const layer = zoneToLayer(zone);
@@ -40,6 +40,7 @@
             // Count
             if (zone.type === 'base') countBase++;
             else if (zone.type === 'bauverbot') countBan++;
+            else if (zone.type === 'safezone') countSafe++;
             else countAct++;
 
             // Popup
@@ -69,9 +70,11 @@
         const statsBase = document.getElementById('statsBase');
         const statsBan = document.getElementById('statsBan');
         const statsAct = document.getElementById('statsAct');
+        const statsSafe = document.getElementById('statsSafe');
         if (statsBase) statsBase.textContent = countBase;
         if (statsBan) statsBan.textContent = countBan;
         if (statsAct) statsAct.textContent = countAct;
+        if (statsSafe) statsSafe.textContent = countSafe;
 
         // Fit bounds if zones exist
         if (zones.length > 0 && zonesLayer.getBounds().isValid()) {

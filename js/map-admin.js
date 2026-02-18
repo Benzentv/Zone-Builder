@@ -237,6 +237,7 @@
             <option value="base">Base</option>
             <option value="bauverbot">Bauverbot</option>
             <option value="aktionspunkt">Aktionspunkt</option>
+            <option value="safezone">Safezone</option>
           </select>
         </div>
         <div style="display:flex;gap:8px;">
