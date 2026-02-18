@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GTA5 Zone Builder – Admin Editor</title>
+    <meta name="description" content="GTA 5 Zone Builder – Admin-Editor zum Erstellen und Verwalten von Zonen." />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="map-page has-panel">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <div class="icon">⚡</div>
+            <span>Zone Builder</span>
+            <span class="badge badge-admin" style="margin-left:4px;">EDITOR</span>
+        </div>
+        <div class="navbar-actions">
+            <span id="userRole" class="badge badge-admin">Admin</span>
+            <span id="userEmail" class="navbar-user">...</span>
+            <a href="map.html" class="btn btn-sm">🗺️ Karte</a>
+            <button class="btn btn-sm" id="logoutBtn">Logout</button>
+        </div>
+    </nav>
+
+    <!-- Toggle panel button -->
+    <button class="toggle-panel-btn" id="togglePanelBtn" title="Panel ein-/ausblenden">☰</button>
+
+    <!-- Map -->
+    <div id="map"></div>
+
+    <!-- Side Panel -->
+    <aside class="side-panel" id="sidePanel">
+        <div class="side-panel-header">
+            <h2>📋 Zonen</h2>
+            <span class="zone-count" id="zoneCount">0 Zonen</span>
+        </div>
+        <div class="side-panel-body">
+            <!-- Search & Filter -->
+            <div class="zone-search-bar">
+                <input class="form-input" id="searchInput" placeholder="Suche (Name / PLZ)..." />
+                <select id="filterSelect">
+                    <option value="all">Alle</option>
+                    <option value="base">Base</option>
+                    <option value="bauverbot">Bauverbot</option>
+                    <option value="aktionspunkt">Aktionspunkt</option>
+                </select>
+            </div>
+
+            <!-- Zone List -->
+            <div class="zone-list" id="zoneList">
+                <div class="empty-state">
+                    <div class="empty-icon">🗺️</div>
+                    <div>Lade Zonen...</div>
+                </div>
+            </div>
+
+            <!-- Hint -->
+            <div style="margin-top:20px; font-size:12px; color:var(--text-muted); line-height:1.5;">
+                <b>Tipp:</b> Nutze die Zeichenwerkzeuge auf der Karte (links), um neue Zonen zu erstellen.
+                Unterstützt: Polygon, Rechteck, Kreis, Marker.
+            </div>
+        </div>
+    </aside>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/map-core.js"></script>
+    <script src="js/map-admin.js"></script>
+</body>
+
+</html>

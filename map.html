@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GTA5 Zone Builder – Karte</title>
+    <meta name="description" content="GTA 5 Zone Builder – Interaktive Kartenansicht aller Zonen." />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="map-page">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <div class="icon">⚡</div>
+            <span>Zone Builder</span>
+        </div>
+        <div class="navbar-actions">
+            <span id="userRole" class="badge badge-viewer">Viewer</span>
+            <span id="userEmail" class="navbar-user">...</span>
+            <a href="admin.html" id="adminLink" class="btn btn-sm" style="display:none;">🛠️ Editor</a>
+            <a href="map.html" class="btn btn-sm" style="opacity:.5; pointer-events:none;">🗺️ Karte</a>
+            <button class="btn btn-sm" id="logoutBtn">Logout</button>
+        </div>
+    </nav>
+
+    <!-- Map -->
+    <div id="map"></div>
+
+    <!-- Stats bar -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div class="stat-dot" style="background: var(--accent-blue);"></div>
+            <span>Base: <b id="statsBase">0</b></span>
+        </div>
+        <div class="stat-item">
+            <div class="stat-dot" style="background: var(--accent-red);"></div>
+            <span>Bauverbot: <b id="statsBan">0</b></span>
+        </div>
+        <div class="stat-item">
+            <div class="stat-dot" style="background: var(--accent-yellow);"></div>
+            <span>Aktionspunkt: <b id="statsAct">0</b></span>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/map-core.js"></script>
+    <script src="js/map-viewer.js"></script>
+</body>
+
+</html>
